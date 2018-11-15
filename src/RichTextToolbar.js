@@ -128,7 +128,7 @@ export default class RichTextToolbar extends Component {
   }
 
   render() {
-    let {customComponent}=this.props;//自己定义的
+    let {customComponent}=this.props;
     return customComponent?customComponent():(
       <View
           style={[{height: 50, backgroundColor: '#D3D3D3', alignItems: 'center'}, this.props.style]}
