@@ -37,6 +37,7 @@ export default class RichTextToolbar extends Component {
     unselectedButtonStyle: PropTypes.object,
     renderAction: PropTypes.func,
     iconMap: PropTypes.object,
+    customComponent:PropTypes.any
   };
 
   constructor(props) {
@@ -50,7 +51,7 @@ export default class RichTextToolbar extends Component {
     };
   }
 
-  componentDidReceiveProps(newProps) {
+  componentWillReceiveProps(newProps) {
     const actions = newProps.actions ? newProps.actions : defaultActions;
     this.setState({
       actions,
@@ -121,8 +122,14 @@ export default class RichTextToolbar extends Component {
         this._defaultRenderAction(action, selected);
   }
 
+  //使外部能够触发到内部的事件
+  pressButton=(action)=>{
+    this._onPress(action);
+  }
+
   render() {
-    return (
+    let {customComponent}=this.props;//自己定义的
+    return customComponent?customComponent():(
       <View
           style={[{height: 50, backgroundColor: '#D3D3D3', alignItems: 'center'}, this.props.style]}
       >
