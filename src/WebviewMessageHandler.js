@@ -170,6 +170,12 @@ export const InjectedMessageHandler = `
         case '${actions.setPlatform}':
           zss_editor.setPlatform(action.data);
           break;
+        case '${actions.disableTitleEditing}':
+          zss_editor.disableTitleEditing();
+          break;
+        case '${actions.enableTitleEditing}':
+          zss_editor.enableTitleEditing();
+          break;
       }
     };
   }

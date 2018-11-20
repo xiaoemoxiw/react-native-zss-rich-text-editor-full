@@ -1643,6 +1643,15 @@
 				zss_editor.platform = platform;
 			}
 
+			zss_editor.disableTitleEditing=function() {
+				console.log('do here zss_editor.disableTitleEditing');
+				$('#zss_editor_title').attr('contenteditable','false');
+			}
+
+			zss_editor.enableTitleEditing=function() {
+				$('#zss_editor_title').attr('contenteditable','true');
+			}
+
 			//end
 		</script>
 

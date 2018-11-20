@@ -340,6 +340,15 @@ export default class RichTextEditor extends Component {
     });
   }
 
+  disableTitleEditing() {
+    console.log('do here disableTitleEditing');
+    this._sendAction(actions.disableTitleEditing);
+  }
+
+  enableTitleEditing() {
+    this._sendAction(actions.enableTitleEditing);
+  }
+
   focusTitle() {
     this._sendAction(actions.focusTitle);
   }
